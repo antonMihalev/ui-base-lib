@@ -134,26 +134,26 @@ table {
   background: #65abd0;
   border: 2px solid transparent;
   margin-right: .5em; }
+  .buttons--item:hover {
+    background: #8cc0dc;
+    cursor: pointer; }
   .buttons--item.big {
     padding: 18px 56px; }
   .buttons--item.sm {
     padding: 5px 43.5px; }
-  .buttons--item.round {
+  .buttons--item.round, .buttons--item.round--menu, .buttons--item.round--split, .buttons--item.round--arr {
     border-radius: 5px; }
-    .buttons--item.round--menu {
-      border-radius: 5px;
+    .buttons--item.round--menu, .buttons--item.round--menu--menu, .buttons--item.round--split--menu, .buttons--item.round--arr--menu {
       padding: 13px 12.5px 10.5px 13.5px; }
-      .buttons--item.round--menu-sm {
-        border-radius: 5px;
+      .buttons--item.round--menu-sm, .buttons--item.round--menu--menu-sm, .buttons--item.round--split--menu-sm, .buttons--item.round--arr--menu-sm {
         padding: 6px 8.5px 6px 8.8px; }
-    .buttons--item.round--split {
+    .buttons--item.round--split, .buttons--item.round--menu--split, .buttons--item.round--split--split, .buttons--item.round--arr--split {
       position: relative;
-      border-radius: 5px;
       padding: 5px 35px 5px 10px;
       background-image: url("../img/sm_arr_ltr.png");
       background-repeat: no-repeat;
       background-position: 34.5px 9px; }
-      .buttons--item.round--split:before {
+      .buttons--item.round--split:before, .buttons--item.round--menu--split:before, .buttons--item.round--split--split:before, .buttons--item.round--arr--split:before {
         content: "";
         height: 31px;
         width: 1px;
@@ -162,60 +162,54 @@ table {
         top: -2px;
         left: 50%;
         margin-left: -1px; }
-    .buttons--item.round--arr {
-      -webkit-border-radius: 5px;
-      border-radius: 5px;
+    .buttons--item.round--arr, .buttons--item.round--arr-sm, .buttons--item.round--menu--arr, .buttons--item.round--menu--arr-sm, .buttons--item.round--split--arr, .buttons--item.round--split--arr-sm, .buttons--item.round--arr--arr, .buttons--item.round--arr--arr-sm {
       padding-right: 15px;
-      position: relative; }
-      .buttons--item.round--arr:after {
+      position: relative;
+      z-index: 1; }
+      .buttons--item.round--arr:after, .buttons--item.round--arr-sm:after, .buttons--item.round--menu--arr:after, .buttons--item.round--menu--arr-sm:after, .buttons--item.round--split--arr:after, .buttons--item.round--split--arr-sm:after, .buttons--item.round--arr--arr:after, .buttons--item.round--arr--arr-sm:after {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 0;
-        width: 0;
-        border: 22px solid transparent;
-        border-left-color: #65abd0;
-        top: -1.27px;
-        left: 83px;
-        -webkit-border-radius: 3px;
-        border-radius: 3px; }
-      .buttons--item.round--arr-sm {
+        background: #65abd0;
+        height: 32px;
+        width: 32px;
+        top: 5px;
+        left: 66px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        transform: rotate(45deg);
+        z-index: -1; }
+      .buttons--item.round--arr:hover:after, .buttons--item.round--arr-sm:hover:after, .buttons--item.round--menu--arr:hover:after, .buttons--item.round--menu--arr-sm:hover:after, .buttons--item.round--split--arr:hover:after, .buttons--item.round--split--arr-sm:hover:after, .buttons--item.round--arr--arr:hover:after, .buttons--item.round--arr--arr-sm:hover:after {
+        background: #8cc0dc; }
+      .buttons--item.round--arr-sm, .buttons--item.round--arr-sm-sm, .buttons--item.round--menu--arr-sm, .buttons--item.round--menu--arr-sm-sm, .buttons--item.round--split--arr-sm, .buttons--item.round--split--arr-sm-sm, .buttons--item.round--arr--arr-sm, .buttons--item.round--arr--arr-sm-sm {
         border-radius: 5px;
         padding-right: 10px;
         padding-left: 16px;
         position: relative; }
-        .buttons--item.round--arr-sm:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 0;
-          width: 0;
-          border: 16.7px solid  transparent;
-          border-left-color: #65abd0;
-          border-radius: 10px;
-          top: -3px;
-          left: 83.5px; }
-  .buttons--item.oval {
+        .buttons--item.round--arr-sm:after, .buttons--item.round--arr-sm-sm:after, .buttons--item.round--menu--arr-sm:after, .buttons--item.round--menu--arr-sm-sm:after, .buttons--item.round--split--arr-sm:after, .buttons--item.round--split--arr-sm-sm:after, .buttons--item.round--arr--arr-sm:after, .buttons--item.round--arr--arr-sm-sm:after {
+          height: 23px;
+          width: 23px;
+          top: 2px;
+          left: 72px; }
+  .buttons--item.oval, .buttons--item.oval-inverse {
     border-radius: 30px; }
-    .buttons--item.oval-inverse {
-      border-radius: 30px;
+    .buttons--item.oval-inverse, .buttons--item.oval-inverse-inverse {
+      padding-left: 2rem;
+      padding-right: 2rem;
       background: white;
       color: #65abd0;
       border-color: #65abd0; }
-  .buttons--item.circle {
+      .buttons--item.oval-inverse:hover, .buttons--item.oval-inverse-inverse:hover {
+        border-color: #8cc0dc; }
+  .buttons--item.circle, .buttons--item.circle--big, .buttons--item.circle--sm {
     border-radius: 50%;
     height: 45px;
     width: 45px;
     padding: 15px 15px; }
-    .buttons--item.circle--big {
-      border-radius: 50%;
+    .buttons--item.circle--big, .buttons--item.circle--big--big, .buttons--item.circle--sm--big {
       height: 56px;
       width: 56px;
       padding: 19px 23px; }
-    .buttons--item.circle--sm {
-      border-radius: 50%;
+    .buttons--item.circle--sm, .buttons--item.circle--big--sm, .buttons--item.circle--sm--sm {
       height: 35px;
       width: 35px;
       padding: 7px 13.5px; }
