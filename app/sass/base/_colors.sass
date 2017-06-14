@@ -1,0 +1,180 @@
+$bg_descr: #373838
+$descr_green: #24aa98
+$descr_blue: #65adb0
+$descr_orange: #d9c26c
+$descr_red: #db7560
+$descr_grey: #eaeaea
+$descr_black: #c0c0c0
+
+$lt_green: #42c7b7
+$md_green: #24aa98
+$dr_green: #1A9385
+
+$lt_blue: #77bfe5
+$md_blue: #60abd0
+$dr_blue: #5093b7
+
+$lt_orange: #e8d48b
+$md_orange: #d9c26c
+$dr_orange: #c9b248
+
+$lt_red: #e79f91
+$md_red: #db7560
+$dr_red: #c25842     
+
+$lt_grey: #dee2e7
+$md_grey: #c6ccd2
+$dr_grey: #b4bbc2
+
+$lt_black: #494949
+$md_black: #383737
+$dr_black: #262626      
+
+.colors
+  font-size: 10px
+  margin-bottom: 2em
+  &--item
+    display: inline-block  
+    border-radius: 5px
+    overflow: hidden
+  .shade
+    display: block
+    font-size: 0
+    &--light,&--md,&--dark
+      width: 48px
+      height: 48px
+      display: inline-block
+      
+    &--light
+      background: $lt_green
+      &.blue
+        background: $lt_blue
+      &.orange
+        background: $lt_orange
+      &.red
+        background: $lt_red
+      &.grey
+        background: $lt_grey
+      &.black
+        background: $lt_black
+    &--md
+      background: $md_green
+      &.blue
+        background: $md_blue
+      &.orange
+        background: $md_orange
+      &.red
+        background: $md_red
+      &.grey
+        background: $md_grey
+      &.black
+        background: $md_black
+    &--dark
+      background: $dr_green
+      &.blue
+        background: $dr_blue
+      &.orange
+        background: $dr_orange
+      &.red
+        background: $dr_red
+      &.grey
+        background: $dr_grey
+      &.black
+        background: $dr_black
+
+  .descr
+    padding: 20px
+    background: $bg_descr
+    font-weight: 600 
+    &--name
+      color: #FFF
+      font-size: 1rem
+      padding-bottom: .4em
+    &--hex
+      font-size: 1rem 
+      color: $descr_green 
+      &.blue
+        color: $descr_blue
+      &.orange
+        color: $descr_orange
+      &.red
+        color: $descr_red
+      &.grey
+        color: $descr_grey
+      &.black
+        color: $descr_black
+// COLORS END
+      
+
+    
+
+//   &--item
+//     display: inline-block
+//     width: 33.3%
+//     height: 100%
+//     &.light-green
+//       background: #42c7b7
+//     &.medium-green
+//       background: #24aa98
+//     &.dark-green
+//       background: #1A9385
+      
+//     &.light-blue
+//       background: #77bfe5
+//     &.medium-blue
+//       background: #60abd0
+//     &.dark-blue
+//       background: #5093b7
+      
+//     &.light-orange
+//       background: #e8d48b
+//     &.medium-orange
+//       background: #d9c26c
+//     &.dark-orange
+//       background: #c9b248
+      
+//     &.light-red
+//       background: #e79f91
+//     &.medium-red
+//       background: #db7560
+//     &.dark-red
+//       background: #c25842
+    
+//     &.light-grey
+//       background: #dee2e7
+//     &.medium-grey
+//       background: #c6ccd2
+//     &.dark-grey
+//       background: #b4bbc2
+      
+//     &.light-black
+//       background: #494949
+//     &.medium-black
+//       background: #383737
+//     &.dark-black
+//       background: #262626
+// .info
+//   height: 100%
+//   width: 100%
+//   padding: 1em 
+//   background: #383737
+//   &--name
+//     color: #fff
+//     font-size: 16px
+//     margin-bottom: 0.1em
+//   &--hex-green
+//     color: #24AA98
+//   &--hex-blue
+//     color: #60abd0
+//   &--hex-orange
+//     color: #d9c26c
+    
+//   &--hex-red
+//     color: #db7560
+//   &--hex-grey
+//     color: #eaeaea
+//   &--hex-black
+//     color: #939393
+
+
+    
