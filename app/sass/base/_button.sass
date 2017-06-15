@@ -19,8 +19,8 @@ $bg_main: #65abd0
     border-radius: 4px
     transform: rotate(45deg)
     z-index: -1
-    &:hover:after
-      background: lighten($bg_main,10%)
+  &:hover:after
+    background: lighten($bg_main,10%)
   
 %round--menu
   @extend %round
@@ -28,7 +28,6 @@ $bg_main: #65abd0
   width: 48px
   height: 48px
   position: relative
-  vertical-align: middle
   .menu-icon
     position: absolute
     display: block
@@ -48,26 +47,49 @@ $bg_main: #65abd0
     &:last-child
       top: 70%
 
-%round--split
+%split--arr
   @extend %round
+  width: 7.5rem
+  height: 3.6rem
   position: relative
-  padding: 5px 35px 5px 10px
-  background-image: url("../img/sm_arr_ltr.png")
-  background-repeat: no-repeat
-  background-position: 34.5px 9px
-  &:before
-   content: ""
-   height: 31px
-   width: 1px
-   background: grey
-   position: absolute
-   top: -2px
-   left: 50%
-   margin-left: -1px 
+  
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 50%
+    height: 100%
+    width: 1px
+    background-color: grey
+  &:hover
+    background-color: $bg_main
+    
+  .arr-icon
+    position: absolute
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    width: 53%
+    height: 110%
+    top: -5%
+    border-top-left-radius: 5px
+    border-bottom-left-radius: 5px 
+     
+    &:hover
+      background-color: lighten($bg_main,10%)
+     
+    &:first-child
+      left: -2%
+      background-image: url("../img/sm_arr_rtl.png")
+    &:last-child
+      right: -3%
+      background-image: url("../img/sm_arr_ltr.png")
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px 
+      
 
 %oval
   -webkit-border-radius: 30px 
-   border-radius: 30px
+  border-radius: 30px
    
 %oval-inverse
   @extend %oval
@@ -88,20 +110,19 @@ $bg_main: #65abd0
   background-image: url("../img/mid_arr_rtl.png")
   background-repeat: no-repeat
   background-position: 46% 50%
-  vertical-align: middle
   
 %circle-forward
   border-radius: 50%
-  height: 37px
-  width: 37px
+  height: 3.7rem
+  width: 3.7rem
   background-image: url("../img/sm_arr_ltr.png")
   background-repeat: no-repeat
-  vertical-align: middle
   background-position: 50% 50%
-  
-  
-  
+  padding: 19px 23px
 
+  
+  
+  
 .button
   &--item
     display: inline-block
@@ -111,6 +132,9 @@ $bg_main: #65abd0
     background: $bg_main
     border: 2px solid transparent
     margin-right: .5em
+    vertical-align: middle
+
+    transition: all .5s 
     &:hover
       background: lighten($bg_main,10%)
       cursor: pointer 
@@ -130,8 +154,8 @@ $bg_main: #65abd0
         @extend %circle-forward
         height: 56px
         width: 56px
-        padding: 19px 23px
-        
+        background-image: url("../img/big_arr_ltr.png")
+          
     &.sm
       padding: 5px 43.5px
       
@@ -155,16 +179,19 @@ $bg_main: #65abd0
         width: 35px
         padding: 7px 13.5px
         
-      &.round--split
-        @extend %round--split
+      &.split--arr
+        @extend %split--arr
         
       &.round--arr
         @extend %round--arr
-        padding-left: 16px
-        height: 23px
-        width: 23px
-        top: 2px
-        left: 72px
+        padding-left: 25px
+        &:after
+          height: 24px
+          width: 24px
+          top: 2px
+          left: 100%
+          margin-left: -13px
+        
           
     &.round 
       @extend %round
@@ -180,6 +207,7 @@ $bg_main: #65abd0
         
     &.circle-back
       @extend %circle-back
+    
    
 
 // .base_container--buttons
