@@ -1,0 +1,271 @@
+$bg_main: #65abd0
+
+%round
+  border-radius: 5px
+  
+%round--arr
+  @extend %round
+  position: relative
+  z-index: 1
+  padding-right: 15px
+  &:after
+    content: ""
+    position: absolute
+    background: $bg_main 
+    height: 32px
+    width: 32px
+    top: 5px
+    left: 66px
+    border-radius: 4px
+    transform: rotate(45deg)
+    z-index: -1
+    &:hover:after
+      background: lighten($bg_main,10%)
+  
+%round--menu
+  @extend %round
+  padding: 0
+  width: 48px
+  height: 48px
+  position: relative
+  vertical-align: middle
+  .menu-icon
+    position: absolute
+    display: block
+    width: 50%
+    height: .1rem
+    border-radius: .01rem 
+    background: white
+    left: 50%
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    -ms-transform: translateX(-50%)
+    -o-transform: translateX(-50%)
+    transform: translateX(-50%)
+    top: 50%
+    &:first-child
+      top: 30%
+    &:last-child
+      top: 70%
+
+%round--split
+  @extend %round
+  position: relative
+  padding: 5px 35px 5px 10px
+  background-image: url("../img/sm_arr_ltr.png")
+  background-repeat: no-repeat
+  background-position: 34.5px 9px
+  &:before
+   content: ""
+   height: 31px
+   width: 1px
+   background: grey
+   position: absolute
+   top: -2px
+   left: 50%
+   margin-left: -1px 
+
+%oval
+  -webkit-border-radius: 30px 
+   border-radius: 30px
+   
+%oval-inverse
+  @extend %oval
+  padding-left: 2rem
+  padding-right: 2rem
+  background: white
+  color: $bg_main 
+  border-color: $bg_main
+  &:hover
+    border-color: lighten($bg_main,10%)
+    background: white 
+ 
+%circle-back
+  border-radius: 50%
+  height: 5rem
+  width: 5rem
+  padding: 15px 15px
+  background-image: url("../img/mid_arr_rtl.png")
+  background-repeat: no-repeat
+  background-position: 46% 50%
+  vertical-align: middle
+  
+%circle-forward
+  border-radius: 50%
+  height: 37px
+  width: 37px
+  background-image: url("../img/sm_arr_ltr.png")
+  background-repeat: no-repeat
+  vertical-align: middle
+  background-position: 50% 50%
+  
+  
+  
+
+.button
+  &--item
+    display: inline-block
+    font-size: 1.6rem
+    color: #fff 
+    padding: 1.2rem 3.38rem
+    background: $bg_main
+    border: 2px solid transparent
+    margin-right: .5em
+    &:hover
+      background: lighten($bg_main,10%)
+      cursor: pointer 
+    &.big
+      padding: 18px 56px
+      
+      &.round
+        @extend %round
+      
+      &.oval
+        @extend %oval
+        
+      &.oval-inverse
+        @extend %oval-inverse
+          
+      &.circle-forward
+        @extend %circle-forward
+        height: 56px
+        width: 56px
+        padding: 19px 23px
+        
+    &.sm
+      padding: 5px 43.5px
+      
+      &.round
+        @extend %round
+      
+      &.oval
+        @extend %oval
+        
+      &.oval-inverse
+        @extend %oval-inverse
+       
+      &.round--menu
+        @extend %round--menu
+        height: 37px
+        width: 37px
+        
+      &.circle-forward
+        @extend %circle-forward
+        height: 35px
+        width: 35px
+        padding: 7px 13.5px
+        
+      &.round--split
+        @extend %round--split
+        
+      &.round--arr
+        @extend %round--arr
+        padding-left: 16px
+        height: 23px
+        width: 23px
+        top: 2px
+        left: 72px
+          
+    &.round 
+      @extend %round
+      &--menu
+        @extend %round--menu
+      &--arr
+        @extend %round--arr
+	      
+    &.oval
+      @extend %oval
+      &-inverse
+        @extend %oval-inverse
+        
+    &.circle-back
+      @extend %circle-back
+   
+
+// .base_container--buttons
+//   width: 100%
+//   display: flex
+//   -webkit-flex-wrap: wrap
+//   -ms-flex-wrap: wrap
+//   flex-wrap: wrap
+//   text-align: center
+//   color: #FFF
+
+//   &-big_item
+//     background: #65abd0
+//     width: 190px
+//     height: 60px
+//     line-height: 60px
+//     font-size: 1.1rem
+//     margin-right: 1em
+//     border: 2px solid transparent
+//     margin-bottom: 1em
+      
+//   .circle_icon_big
+//     width: 60px
+//     height: 60px
+//     -webkit-border-radius: 50%
+//     border-radius: 50%
+//     background-image: url("../img/big_arr_ltr.png") 
+//     background-repeat: no-repeat
+//     background-position: 26px 23px
+//   .round_corner
+//     -webkit-border-radius: 5px
+//      border-radius: 5px
+//   .oval
+//     -webkit-border-radius: 1.5em
+//     border-radius: 1.5em
+//     &_mid
+//      -webkit-border-radius: 1.3em
+//       border-radius: 1.3em 
+//   .transp
+//     border-color: #65abd0
+//     color: #65ABD0 
+//     background: transparent
+    
+//   &-mid_item
+//     background: #65abd0
+//     width: 140px
+//     height: 50px
+//     line-height: 50px
+//     font-size: 1.1rem
+//     margin-right: 1em
+//     border: 2px solid transparent
+   
+//   .square_icon_mid
+//     width: 50px
+//     height: 50px
+//     background: #65ABD0
+//     -webkit-border-radius: .4em 
+//     border-radius: .4em 
+//     background-image: url("../img/mid_menu_icon.png")
+//     background-repeat: no-repeat
+//     background-position: 14px 17px
+    
+//   .circle_icon_mid
+//     width: 50px
+//     height: 50px
+//     -webkit-border-radius: 50%
+//     border-radius: 50%
+//     background-image: url("../img/mid_arr_rtl.png") 
+//     background-repeat: no-repeat
+//     background-position: 18px 18px
+//   .mid_arr
+//     width: 70px
+//     position: relative
+//     &:after
+//       content: ""
+//       position: absolute
+//       width: 0
+//       height: 0
+//       border-top: 24px solid transparent
+//       border-left: 24px solid #65abd0
+//       border-bottom: 24px solid transparent
+//       top: -1px
+//       right: -24px  
+
+    
+    
+
+      
+//     
