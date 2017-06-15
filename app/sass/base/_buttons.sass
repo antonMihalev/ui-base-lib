@@ -1,9 +1,20 @@
 $bg_main: #65abd0
+%round
+  border-radius: 5px
+%round--arr
+  position: relative
+  z-index: 1
+  padding-right: 15px
+%oval
+  -webkit-border-radius: 30px 
+   border-radius: 30px 
+%circle
+  border-radius: 50%
+  height: 45px
+  width: 45px
+  padding: 15px 15px
 
 .buttons
-  .row
-    display: block
-    margin-bottom: 1em
   &--item
     display: inline-block
     font-size: 1.1rem
@@ -20,13 +31,16 @@ $bg_main: #65abd0
     &.sm
       padding: 5px 43.5px
       
-    &.round, &.round--menu, &.round--split,&.round--arr 
-      border-radius: 5px
-      &--menu 
+    &.round 
+      @extend %round
+      &--menu
+        @extend %round
         padding: 13px 12.5px 10.5px 13.5px
         &-sm
+          @extend %round
           padding: 6px 8.5px 6px 8.8px
       &--split
+        @extend %round
         position: relative
         padding: 5px 35px 5px 10px
         background-image: url("../img/sm_arr_ltr.png")
@@ -41,10 +55,9 @@ $bg_main: #65abd0
           top: -2px
           left: 50%
           margin-left: -1px
-      &--arr, &--arr-sm
-        padding-right: 15px
-        position: relative
-        z-index: 1 
+      &--arr
+        @extend %round
+        @extend %round--arr 
         &:after
           content: ""
           position: absolute
@@ -71,9 +84,10 @@ $bg_main: #65abd0
             top: 2px 
             left: 72px
 	      
-    &.oval, &.oval-inverse
-      border-radius: 30px
+    &.oval
+      @extend %oval
       &-inverse
+        @extend %oval
         padding-left: 2rem
         padding-right: 2rem
         background: white
@@ -81,16 +95,15 @@ $bg_main: #65abd0
         border-color: $bg_main
         &:hover
           border-color: lighten($bg_main,10%) 
-    &.circle, &.circle--big, &.circle--sm
-      border-radius: 50%
-      height: 45px
-      width: 45px
-      padding: 15px 15px
+    &.circle
+      @extend %circle
       &--big
+        @extend %circle
         height: 56px
         width: 56px
         padding: 19px 23px
       &--sm
+        @extend %circle
         height: 35px
         width: 35px
         padding: 7px 13.5px
