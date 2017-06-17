@@ -1,7 +1,10 @@
+
 $bg_main: #65abd0
+$bg_split: #24aa98
 
 %round
   border-radius: 5px
+
   
 %round--arr
   @extend %round
@@ -19,8 +22,13 @@ $bg_main: #65abd0
     border-radius: 4px
     transform: rotate(45deg)
     z-index: -1
+    -webkit-transition: all .01ms 
+    -moz-transition: all .01ms 
+    -ms-transition: all .01ms 
+    -o-transition: all .01ms 
+    transition: all .01ms 
   &:hover:after
-    background: lighten($bg_main,10%)
+    background: lighten($bg_split,10%)
   
 %round--menu
   @extend %round
@@ -60,7 +68,7 @@ $bg_main: #65abd0
     left: 50%
     height: 100%
     width: 1px
-    background-color: grey
+    background-color: #609fc0
   &:hover
     background-color: $bg_main
     
@@ -119,24 +127,92 @@ $bg_main: #65abd0
   background-repeat: no-repeat
   background-position: 50% 50%
   padding: 19px 23px
+  
+.split.round--menu
+  padding: 0
+  width: 48px
+  height: 49px
+  position: relative
+  .menu-icon
+    position: absolute
+    display: block
+    width: 50%
+    height: .1rem
+    border-radius: .01rem 
+    background: white
+    left: 50%
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    -ms-transform: translateX(-50%)
+    -o-transform: translateX(-50%)
+    transform: translateX(-50%)
+    top: 50%
+    &:first-child
+      top: 30%
+      width: 40%
+    &:last-child
+      top: 70%
+      width: 30%
+      
+.split.button--item:not(.round)
+  background-color: $bg_split
+  margin-right: -5px
+  border-radius: 0px
+  
+  &:first-child 
+    border-radius: 5px 0 0 5px
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      right: 0
+      height: 100%
+      width: 2px
+      background-color: #269e8e
+    .menu-icon
+      &:first-child
+        left: 45%
+      &:last-child
+        left: 40%
 
-  
-  
-  
+  &:last-child
+    border-radius: 0 5px 5px 0
+    &:before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0%
+      height: 100%
+      width: 1px
+      background-color: #269e8e
+    .menu-icon
+      &:first-child
+        left: 55%
+      &:last-child
+        left: 60%
+
+
+// BUTTON START
 .button
   &--item
     display: inline-block
     font-size: 1.6rem
     color: #fff 
     padding: 1.2rem 3.38rem
-    background: $bg_main
+    background-color: $bg_main
     border: 2px solid transparent
     margin-right: .5em
     vertical-align: middle
 
-    transition: all .5s 
+    transition: all .5s
+    
+    &.split
+      background-color: $bg_split
+      &:hover
+        background-color: lighten($bg_main,10%)
+        
     &:hover
-      background: lighten($bg_main,10%)
+      background-color: lighten($bg_split,10%)
       cursor: pointer 
     &.big
       padding: 18px 56px
@@ -207,93 +283,49 @@ $bg_main: #65abd0
         
     &.circle-back
       @extend %circle-back
-    
-   
 
-// .base_container--buttons
-//   width: 100%
-//   display: flex
-//   -webkit-flex-wrap: wrap
-//   -ms-flex-wrap: wrap
-//   flex-wrap: wrap
-//   text-align: center
-//   color: #FFF
-
-//   &-big_item
-//     background: #65abd0
-//     width: 190px
-//     height: 60px
-//     line-height: 60px
-//     font-size: 1.1rem
-//     margin-right: 1em
-//     border: 2px solid transparent
-//     margin-bottom: 1em
+.split
+  vertical-align: middle
+  &.round
+    background-color: %bg_main
+    padding-left: .7rem 
+    padding-right: 1.8rem
+    background-image: url("../img/arr_down.png")
+    background-repeat: no-repeat
+    background-position: 90% 50% 
+    	      
+.split-item
+  display: inline-block
+  margin-right: 0.6em
+  vertical-align: middle
+  font-size: 1.4rem
+  input
+    margin-right: -.3em
+    font-size: 1.4rem 
+    padding: 1.4rem
+    border-radius: 5px 0 0px 5px
+    border: 1px solid #c6ccd2
+    &:focus 
+      -webkit-outline-radius: 5px
+    &:not(:first-child)
+      border-radius: 0px 
       
-//   .circle_icon_big
-//     width: 60px
-//     height: 60px
-//     -webkit-border-radius: 50%
-//     border-radius: 50%
-//     background-image: url("../img/big_arr_ltr.png") 
-//     background-repeat: no-repeat
-//     background-position: 26px 23px
-//   .round_corner
-//     -webkit-border-radius: 5px
-//      border-radius: 5px
-//   .oval
-//     -webkit-border-radius: 1.5em
-//     border-radius: 1.5em
-//     &_mid
-//      -webkit-border-radius: 1.3em
-//       border-radius: 1.3em 
-//   .transp
-//     border-color: #65abd0
-//     color: #65ABD0 
-//     background: transparent
+  .button--item
+    padding: 1.4rem 1.8rem
+    position: relative
+    z-index: 1
+    border: 0px 
     
-//   &-mid_item
-//     background: #65abd0
-//     width: 140px
-//     height: 50px
-//     line-height: 50px
-//     font-size: 1.1rem
-//     margin-right: 1em
-//     border: 2px solid transparent
-   
-//   .square_icon_mid
-//     width: 50px
-//     height: 50px
-//     background: #65ABD0
-//     -webkit-border-radius: .4em 
-//     border-radius: .4em 
-//     background-image: url("../img/mid_menu_icon.png")
-//     background-repeat: no-repeat
-//     background-position: 14px 17px
-    
-//   .circle_icon_mid
-//     width: 50px
-//     height: 50px
-//     -webkit-border-radius: 50%
-//     border-radius: 50%
-//     background-image: url("../img/mid_arr_rtl.png") 
-//     background-repeat: no-repeat
-//     background-position: 18px 18px
-//   .mid_arr
-//     width: 70px
-//     position: relative
-//     &:after
-//       content: ""
-//       position: absolute
-//       width: 0
-//       height: 0
-//       border-top: 24px solid transparent
-//       border-left: 24px solid #65abd0
-//       border-bottom: 24px solid transparent
-//       top: -1px
-//       right: -24px  
+form.split-item
+  .button--item
+    &:first-child, &:last-child
+      &:after, &:before
+        display: none
+    &:first-child
+      padding-right: 3rem
+      background-image: url("../img/arr_down.png")
+      background-repeat: no-repeat
+      background-position: 90% 50%
 
-    
-    
 
-      
-//     
+

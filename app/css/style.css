@@ -145,9 +145,14 @@ html {
     left: 66px;
     border-radius: 4px;
     transform: rotate(45deg);
-    z-index: -1; }
+    z-index: -1;
+    -webkit-transition: all .01ms;
+    -moz-transition: all .01ms;
+    -ms-transition: all .01ms;
+    -o-transition: all .01ms;
+    transition: all .01ms; }
   .button--item.round--arr:hover:after {
-    background: #8cc0dc; }
+    background: #2ed3bd; }
 
 .button--item.sm.round--menu, .button--item.round--menu {
   padding: 0;
@@ -184,7 +189,7 @@ html {
     left: 50%;
     height: 100%;
     width: 1px;
-    background-color: grey; }
+    background-color: #609fc0; }
   .button--item.sm.split--arr:hover {
     background-color: #65abd0; }
   .button--item.sm.split--arr .arr-icon {
@@ -239,18 +244,81 @@ html {
   background-position: 50% 50%;
   padding: 19px 23px; }
 
+.split.round--menu {
+  padding: 0;
+  width: 48px;
+  height: 49px;
+  position: relative; }
+  .split.round--menu .menu-icon {
+    position: absolute;
+    display: block;
+    width: 50%;
+    height: .1rem;
+    border-radius: .01rem;
+    background: white;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 50%; }
+    .split.round--menu .menu-icon:first-child {
+      top: 30%;
+      width: 40%; }
+    .split.round--menu .menu-icon:last-child {
+      top: 70%;
+      width: 30%; }
+
+.split.button--item:not(.round) {
+  background-color: #24aa98;
+  margin-right: -5px;
+  border-radius: 0px; }
+  .split.button--item:not(.round):first-child {
+    border-radius: 5px 0 0 5px; }
+    .split.button--item:not(.round):first-child:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #269e8e; }
+    .split.button--item:not(.round):first-child .menu-icon:first-child {
+      left: 45%; }
+    .split.button--item:not(.round):first-child .menu-icon:last-child {
+      left: 40%; }
+  .split.button--item:not(.round):last-child {
+    border-radius: 0 5px 5px 0; }
+    .split.button--item:not(.round):last-child:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0%;
+      height: 100%;
+      width: 1px;
+      background-color: #269e8e; }
+    .split.button--item:not(.round):last-child .menu-icon:first-child {
+      left: 55%; }
+    .split.button--item:not(.round):last-child .menu-icon:last-child {
+      left: 60%; }
+
 .button--item {
   display: inline-block;
   font-size: 1.6rem;
   color: #fff;
   padding: 1.2rem 3.38rem;
-  background: #65abd0;
+  background-color: #65abd0;
   border: 2px solid transparent;
   margin-right: .5em;
   vertical-align: middle;
   transition: all .5s; }
+  .button--item.split {
+    background-color: #24aa98; }
+    .button--item.split:hover {
+      background-color: #8cc0dc; }
   .button--item:hover {
-    background: #8cc0dc;
+    background-color: #2ed3bd;
     cursor: pointer; }
   .button--item.big {
     padding: 18px 56px; }
@@ -275,3 +343,43 @@ html {
         top: 2px;
         left: 100%;
         margin-left: -13px; }
+
+.split {
+  vertical-align: middle; }
+  .split.round {
+    background-color: % bg_main;
+    padding-left: .7rem;
+    padding-right: 1.8rem;
+    background-image: url("../img/arr_down.png");
+    background-repeat: no-repeat;
+    background-position: 90% 50%; }
+
+.split-item {
+  display: inline-block;
+  margin-right: 0.6em;
+  vertical-align: middle;
+  font-size: 1.4rem; }
+  .split-item input {
+    margin-right: -.3em;
+    font-size: 1.4rem;
+    padding: 1.4rem;
+    border-radius: 5px 0 0px 5px;
+    border: 1px solid #c6ccd2; }
+    .split-item input:focus {
+      -webkit-outline-radius: 5px; }
+    .split-item input:not(:first-child) {
+      border-radius: 0px; }
+  .split-item .button--item {
+    padding: 1.4rem 1.8rem;
+    position: relative;
+    z-index: 1;
+    border: 0px; }
+
+form.split-item .button--item:first-child:after, form.split-item .button--item:first-child:before, form.split-item .button--item:last-child:after, form.split-item .button--item:last-child:before {
+  display: none; }
+
+form.split-item .button--item:first-child {
+  padding-right: 3rem;
+  background-image: url("../img/arr_down.png");
+  background-repeat: no-repeat;
+  background-position: 90% 50%; }
