@@ -1,0 +1,170 @@
+$grey: #c6ccd2
+%input
+  font-size: 1.6rem
+  min-width: 220px
+  -webkit-border-radius: 5px 
+  border-radius: 5px
+  border: 1px solid $grey
+  padding: 1.4rem 1.4rem
+  padding-right: .9rem
+  &::-webkit-input-placeholder
+      color: #c6ccd2
+%input--small
+  @extend %input
+  font-size: 1.4rem
+  padding-top: 1rem
+  padding-bottom: 1rem
+%oval-input
+  -webkit-border-radius: 30px
+  border-radius: 30px
+%input--btn
+  @extend %input
+  position: absolute
+  top: 0
+  right: 0
+  min-width: 48px
+  min-height: 100% 
+  text-align: center
+  padding-right: 0
+  padding-left: 0
+  color: %grey
+  border-radius: 0 5px 5px 0
+  background-image: url("../img/search_icon.png")
+  background-repeat: no-repeat
+  background-position: center center
+  cursor: pointer
+  &:hover
+    background-color: $bg_split 
+ 
+.input
+  @extend %input 
+  &-group
+    display: inline-block
+    position: relative
+  &--focused
+    @extend %input
+    border-color: #65abd0
+    &::-webkit-input-placeholder
+      color: black
+  &--success
+    @extend %input
+    border-color: #24aa98
+    background-image: url('../img/success_icon.png')
+    background-repeat: no-repeat
+    background-position: 95% 47%
+    &::-webkit-input-placeholder
+      color: black
+  &--error
+    @extend %input
+    border-color: #db7560
+    background-image: url('../img/error_icon.png')
+    background-repeat: no-repeat
+    background-position: 95% 47%
+    &::-webkit-input-placeholder
+      color: black
+
+
+  &--round
+    @extend %input
+    @extend %oval-input
+    padding-left: 4rem
+    padding-right: 0
+    background-image: url('../img/search_icon.png')
+    background-repeat: no-repeat
+    background-position: 8% 47%
+    &-focused
+      @extend %input
+      @extend %oval-input
+      padding-left: 4rem
+      padding-right: 0
+      background-image: url('../img/blck_search_icon.png'),url('../img/delete_icon.png')
+      background-repeat: no-repeat
+      background-position: 8% 47%,90% 47%
+      border-color: #65abd0
+      &::-webkit-input-placeholder
+        color: black
+  &--divided
+    @extend %input
+    min-width: 100px 
+    max-width: 160px
+    &::-webkit-input-placeholder
+      color: black
+  &--btn
+    @extend %input--btn
+    &-active
+      @extend %input--btn
+      top: 0
+      right: -58px
+      border-radius: 5px
+      background-color: $bg_split 
+      background-image: url("../img/search_icon_white.png")
+      background-repeat: no-repeat
+      background-position: center center
+      &:hover
+        background-color: $bg_main 
+  &--small
+    @extend %input--small
+    
+    &-focused
+      @extend %input--small
+      border-color: #65abd0
+      &::-webkit-input-placeholder
+        color: black
+    &-round
+      @extend %input--small
+      @extend %oval-input
+      padding-left: 3rem
+      padding-right: 0
+      background-image: url('../img/search_icon_small.png')
+      background-repeat: no-repeat
+      background-position: 5% 50%
+      &-focused
+        @extend %input--small
+        @extend %oval-input
+        padding-left: 3rem
+        padding-right: 0
+        background-image: url('../img/blck_search_icon_small.png'),url('../img/delete_icon.png')
+        background-repeat: no-repeat
+        background-position: 5% 50%,90% 47%
+        border-color: #65abd0
+        &::-webkit-input-placeholder
+          color: black
+    &-success
+      @extend %input--small
+      border-color: #24aa98
+      background-image: url('../img/success_icon.png')
+      background-repeat: no-repeat
+      background-position: 95% 47%
+      &::-webkit-input-placeholder
+        color: black
+    &-error
+      @extend %input--small
+      border-color: #db7560
+      background-image: url('../img/error_icon.png')
+      background-repeat: no-repeat
+      background-position: 95% 47%
+      &::-webkit-input-placeholder
+        color: black
+    &-divided
+      @extend %input--small
+      min-width: 100px 
+      max-width: 160px
+      &::-webkit-input-placeholder
+        color: black
+
+    
+    
+
+
+
+
+
+    
+
+     
+     
+    
+    
+
+
+
