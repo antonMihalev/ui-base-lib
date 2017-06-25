@@ -1,4 +1,6 @@
 $grey: #c6ccd2
+$blue: #65abd0
+
 %input
   font-size: 1.6rem
   min-width: 220px
@@ -8,7 +10,7 @@ $grey: #c6ccd2
   padding: 1.4rem 1.4rem
   padding-right: .9rem
   &::-webkit-input-placeholder
-      color: #c6ccd2
+      color: $grey
 %input--small
   @extend %input
   font-size: 1.4rem
@@ -43,7 +45,7 @@ $grey: #c6ccd2
     position: relative
   &--focused
     @extend %input
-    border-color: #65abd0
+    border-color: $blue
     &::-webkit-input-placeholder
       color: black
   &--success
@@ -80,7 +82,7 @@ $grey: #c6ccd2
       background-image: url('../img/blck_search_icon.png'),url('../img/delete_icon.png')
       background-repeat: no-repeat
       background-position: 8% 47%,90% 47%
-      border-color: #65abd0
+      border-color: $blue
       &::-webkit-input-placeholder
         color: black
   &--divided
@@ -107,7 +109,7 @@ $grey: #c6ccd2
     
     &-focused
       @extend %input--small
-      border-color: #65abd0
+      border-color: $blue
       &::-webkit-input-placeholder
         color: black
     &-round
@@ -126,7 +128,7 @@ $grey: #c6ccd2
         background-image: url('../img/blck_search_icon_small.png'),url('../img/delete_icon.png')
         background-repeat: no-repeat
         background-position: 5% 50%,90% 47%
-        border-color: #65abd0
+        border-color: $blue
         &::-webkit-input-placeholder
           color: black
     &-success
@@ -151,6 +153,21 @@ $grey: #c6ccd2
       max-width: 160px
       &::-webkit-input-placeholder
         color: black
+  &--textarea
+    @extend %input
+    min-width: 460px
+    min-height: 140px
+    padding-top: .8rem
+    color: $grey
+    &-focused
+      @extend %input
+      min-width: 460px
+      min-height: 140px
+      padding-top: .8rem
+      border-color: $blue
+
+
+
 
     
     

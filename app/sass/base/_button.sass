@@ -127,6 +127,18 @@ $bg_split: #24aa98
   background-position: 50% 50%
   padding: 19px 23px
   
+%button--item
+  display: inline-block
+  font-size: 1.6rem
+  color: #fff 
+  padding: 1.2rem 3.38rem
+  background-color: $bg_main
+  border: 2px solid transparent
+  margin-right: .5em
+  vertical-align: middle
+
+  transition: all .5s  
+  
 .split.round--menu
   padding: 0
   width: 48px
@@ -152,7 +164,7 @@ $bg_split: #24aa98
     &:last-child
       top: 70%
       width: 30%
-      
+     
 .split.button--item:not(.round)
   background-color: $bg_split
   margin-right: -5px
@@ -194,16 +206,7 @@ $bg_split: #24aa98
 // BUTTON START
 .button
   &--item
-    display: inline-block
-    font-size: 1.6rem
-    color: #fff 
-    padding: 1.2rem 3.38rem
-    background-color: $bg_main
-    border: 2px solid transparent
-    margin-right: .5em
-    vertical-align: middle
-
-    transition: all .5s
+    @extend %button--item
     
     &.split
       background-color: $bg_split

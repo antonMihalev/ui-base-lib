@@ -128,7 +128,7 @@ html {
       .color .descr--hex.black {
         color: #c0c0c0; }
 
-.button--item.sm.round--arr, .button--item.round--arr, .button--item.sm.round--menu, .button--item.round--menu, .button--item.sm.split--arr, .button--item.big.round, .button--item.sm.round, .button--item.round {
+.button--item.sm.round--arr, .button--item.round--arr, .button--item.sm.round--menu, .button--item.round--menu, .button--item.sm.split--arr, .button--item.big.round, .button--item.sm.round, .button--item.round, .ddmenu {
   border-radius: 5px; }
 
 .button--item.sm.round--arr, .button--item.round--arr {
@@ -244,6 +244,17 @@ html {
   background-position: 50% 50%;
   padding: 19px 23px; }
 
+.button--item, .ddmenu {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1.2rem 3.38rem;
+  background-color: #65abd0;
+  border: 2px solid transparent;
+  margin-right: .5em;
+  vertical-align: middle;
+  transition: all .5s; }
+
 .split.round--menu {
   padding: 0;
   width: 48px;
@@ -303,46 +314,39 @@ html {
     .split.button--item:not(.round):last-child .menu-icon:last-child {
       left: 60%; }
 
-.button--item {
-  display: inline-block;
-  font-size: 1.6rem;
-  color: #fff;
-  padding: 1.2rem 3.38rem;
-  background-color: #65abd0;
-  border: 2px solid transparent;
-  margin-right: .5em;
-  vertical-align: middle;
-  transition: all .5s; }
-  .button--item.split {
-    background-color: #24aa98; }
-    .button--item.split:hover {
-      background-color: #8cc0dc; }
-  .button--item:hover {
-    background-color: #2ed3bd;
-    cursor: pointer; }
-  .button--item.big {
-    padding: 18px 56px; }
-    .button--item.big.circle-forward {
-      height: 56px;
-      width: 56px;
-      background-image: url("../img/big_arr_ltr.png"); }
-  .button--item.sm {
-    padding: 5px 43.5px; }
-    .button--item.sm.round--menu {
-      height: 37px;
-      width: 37px; }
-    .button--item.sm.circle-forward {
-      height: 35px;
-      width: 35px;
-      padding: 7px 13.5px; }
-    .button--item.sm.round--arr {
-      padding-left: 25px; }
-      .button--item.sm.round--arr:after {
-        height: 24px;
-        width: 24px;
-        top: 2px;
-        left: 100%;
-        margin-left: -13px; }
+.button--item.split {
+  background-color: #24aa98; }
+  .button--item.split:hover {
+    background-color: #8cc0dc; }
+
+.button--item:hover {
+  background-color: #2ed3bd;
+  cursor: pointer; }
+
+.button--item.big {
+  padding: 18px 56px; }
+  .button--item.big.circle-forward {
+    height: 56px;
+    width: 56px;
+    background-image: url("../img/big_arr_ltr.png"); }
+
+.button--item.sm {
+  padding: 5px 43.5px; }
+  .button--item.sm.round--menu {
+    height: 37px;
+    width: 37px; }
+  .button--item.sm.circle-forward {
+    height: 35px;
+    width: 35px;
+    padding: 7px 13.5px; }
+  .button--item.sm.round--arr {
+    padding-left: 25px; }
+    .button--item.sm.round--arr:after {
+      height: 24px;
+      width: 24px;
+      top: 2px;
+      left: 100%;
+      margin-left: -13px; }
 
 .split {
   vertical-align: middle; }
@@ -384,7 +388,7 @@ html {
   background-repeat: no-repeat;
   background-position: 90% 50%; }
 
-.input--small, .input--small-focused, .input--small-round, .input--small-round-focused, .input--small-success, .input--small-error, .input--small-divided, .input--btn, .input--btn-active, .input, .input--focused, .input--success, .input--error, .input--round, .input--round-focused, .input--divided {
+.input--small, .input--small-focused, .input--small-round, .input--small-round-focused, .input--small-success, .input--small-error, .input--small-divided, .input--btn, .input--btn-active, .input, .input--focused, .input--success, .input--error, .input--round, .input--round-focused, .input--divided, .input--textarea, .input--textarea-focused {
   font-size: 1.6rem;
   min-width: 220px;
   -webkit-border-radius: 5px;
@@ -392,7 +396,7 @@ html {
   border: 1px solid #c6ccd2;
   padding: 1.4rem 1.4rem;
   padding-right: .9rem; }
-  .input--small::-webkit-input-placeholder, .input--small-focused::-webkit-input-placeholder, .input--small-round::-webkit-input-placeholder, .input--small-round-focused::-webkit-input-placeholder, .input--small-success::-webkit-input-placeholder, .input--small-error::-webkit-input-placeholder, .input--small-divided::-webkit-input-placeholder, .input--btn::-webkit-input-placeholder, .input--btn-active::-webkit-input-placeholder, .input::-webkit-input-placeholder, .input--focused::-webkit-input-placeholder, .input--success::-webkit-input-placeholder, .input--error::-webkit-input-placeholder, .input--round::-webkit-input-placeholder, .input--round-focused::-webkit-input-placeholder, .input--divided::-webkit-input-placeholder {
+  .input--small::-webkit-input-placeholder, .input--small-focused::-webkit-input-placeholder, .input--small-round::-webkit-input-placeholder, .input--small-round-focused::-webkit-input-placeholder, .input--small-success::-webkit-input-placeholder, .input--small-error::-webkit-input-placeholder, .input--small-divided::-webkit-input-placeholder, .input--btn::-webkit-input-placeholder, .input--btn-active::-webkit-input-placeholder, .input::-webkit-input-placeholder, .input--focused::-webkit-input-placeholder, .input--success::-webkit-input-placeholder, .input--error::-webkit-input-placeholder, .input--round::-webkit-input-placeholder, .input--round-focused::-webkit-input-placeholder, .input--divided::-webkit-input-placeholder, .input--textarea::-webkit-input-placeholder, .input--textarea-focused::-webkit-input-placeholder {
     color: #c6ccd2; }
 
 .input--small, .input--small-focused, .input--small-round, .input--small-round-focused, .input--small-success, .input--small-error, .input--small-divided {
@@ -522,3 +526,27 @@ html {
   max-width: 160px; }
   .input--small-divided::-webkit-input-placeholder {
     color: black; }
+
+.input--textarea {
+  min-width: 460px;
+  min-height: 140px;
+  padding-top: .8rem;
+  color: #c6ccd2; }
+  .input--textarea-focused {
+    min-width: 460px;
+    min-height: 140px;
+    padding-top: .8rem;
+    border-color: #65abd0; }
+
+.ddmenu {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 220px;
+  padding: 1.5rem;
+  background-color: #43d7c3;
+  background-image: url("../img/arr_down.png");
+  background-repeat: no-repeat;
+  background-position: 95% 53%;
+  cursor: pointer; }
+  .ddmenu:hover {
+    background-color: #65abd0; }
