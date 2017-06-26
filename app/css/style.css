@@ -53,7 +53,11 @@ html {
   margin: 20px auto; }
 
 .row {
-  display: block;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  align-content: center;
   margin-bottom: 1em; }
 
 .color {
@@ -128,7 +132,7 @@ html {
       .color .descr--hex.black {
         color: #c0c0c0; }
 
-.button--item.sm.round--arr, .button--item.round--arr, .button--item.sm.round--menu, .button--item.round--menu, .button--item.sm.split--arr, .button--item.big.round, .button--item.sm.round, .button--item.round, .ddmenu {
+.button--item.sm.round--arr, .button--item.round--arr, .button--item.sm.round--menu, .button--item.round--menu, .button--item.sm.split--arr, .button--item.big.round, .button--item.sm.round, .button--item.round, .dropbtn {
   border-radius: 5px; }
 
 .button--item.sm.round--arr, .button--item.round--arr {
@@ -244,7 +248,7 @@ html {
   background-position: 50% 50%;
   padding: 19px 23px; }
 
-.button--item, .ddmenu {
+.button--item, .dropdown-link, .dropbtn {
   display: inline-block;
   font-size: 1.6rem;
   color: #fff;
@@ -253,6 +257,7 @@ html {
   border: 2px solid transparent;
   margin-right: .5em;
   vertical-align: middle;
+  cursor: pointer;
   transition: all .5s; }
 
 .split.round--menu {
@@ -538,15 +543,86 @@ html {
     padding-top: .8rem;
     border-color: #65abd0; }
 
-.ddmenu {
+.dropdown {
+  position: relative;
+  display: block; }
+  .dropdown:hover .dropdown-content {
+    display: block; }
+  .dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+  .dropdown-link {
+    padding: 1.5rem;
+    border-bottom: 1px solid #1a877b;
+    text-decoration: none;
+    display: block;
+    background-color: #24aa98;
+    width: 220px;
+    text-transform: uppercase;
+    margin-right: 0;
+    border-bottom: none; }
+    .dropdown-link:hover {
+      background-color: #1a9385; }
+    .dropdown-link:last-child {
+      -webkit-border-radius: 0 0 5px 5px;
+      border-radius: 0 0 5px 5px; }
+
+.module-group {
+  margin-right: 1rem; }
+
+.dropbtn {
   display: block;
-  margin-bottom: 1rem;
-  max-width: 220px;
+  margin-top: 1rem;
+  width: 220px;
+  text-align: left;
   padding: 1.5rem;
-  background-color: #43d7c3;
+  background-color: #24aa98;
   background-image: url("../img/arr_down.png");
   background-repeat: no-repeat;
   background-position: 95% 53%;
   cursor: pointer; }
-  .ddmenu:hover {
-    background-color: #65abd0; }
+  .dropbtn:hover {
+    background-color: #1a9385;
+    border-radius: 5px 5px 0 0;
+    background-image: url("../img/arr_up.png"); }
+
+.radiobtn {
+  font-size: 1.6rem; }
+  .radiobtn input[type=radio]:not(old) {
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    opacity: 0; }
+    .radiobtn input[type=radio]:not(old) + label {
+      display: block;
+      margin-left: 0px;
+      margin-top: 5px;
+      padding-left: 25px;
+      background: url("../img/radiobtn_disabled.png") no-repeat 0 0;
+      line-height: 17px; }
+      .radiobtn input[type=radio]:not(old) + label.disabled {
+        color: #c6ccd2; }
+    .radiobtn input[type=radio]:not(old):checked + label:not(:last-child) {
+      background-image: url("../img/radiobtn_enable.png"); }
+
+.checkbox {
+  font-size: 1.6rem; }
+  .checkbox input[type=checkbox]:not(old) {
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    opacity: 0; }
+    .checkbox input[type=checkbox]:not(old) + label {
+      display: block;
+      margin-left: 0px;
+      margin-top: 5px;
+      padding-left: 25px;
+      background: url("../img/checkbox_disabled.png") no-repeat 0 0;
+      line-height: 17px; }
+      .checkbox input[type=checkbox]:not(old) + label.disabled {
+        color: #c6ccd2; }
+    .checkbox input[type=checkbox]:not(old):checked + label:not(:last-child) {
+      background-image: url("../img/checkbox_enabled.png"); }

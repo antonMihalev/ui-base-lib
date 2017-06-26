@@ -1,14 +1,51 @@
-.ddmenu
+.dropdown
+  position: relative
+  display: block
+  &:hover .dropdown-content
+    display: block
+    
+  &-content 
+    display: block  //none - to do hidden
+    position: absolute
+    background-color: #f9f9f9
+    min-width: 220px
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+    
+  &-link
+    @extend %button--item
+    padding: 1.5rem
+    border-bottom: 1px solid #1a877b
+    text-decoration: none
+    display: block
+    background-color: $bg_split
+    width: 220px
+    text-transform: uppercase
+    margin-right: 0
+    &:hover
+      background-color: #1a9385
+    &:last-child
+      -webkit-border-radius: 0 0 5px 5px 
+      border-radius: 0 0 5px 5px
+    border-bottom: none
+
+.module-group
+  margin-right: 1rem 
+  // background: #888
+.dropbtn
   @extend %button--item
   @extend %round
   display: block
-  margin-bottom: 1rem
-  max-width: 220px 
+  margin-top: 1rem
+  width: 220px
+  text-align: left
   padding: 1.5rem
-  background-color: lighten($bg_split,15%)
+  background-color: $bg_split
   background-image: url('../img/arr_down.png')
   background-repeat: no-repeat
   background-position: 95% 53%
   cursor: pointer
   &:hover
-    background-color: $bg_main
+    background-color: #1a9385
+    border-radius: 5px 5px 0 0 
+    background-image: url('../img/arr_up.png')
+    

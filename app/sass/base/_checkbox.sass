@@ -1,0 +1,18 @@
+.checkbox
+  font-size: 1.6rem
+  input[type=checkbox]:not(old)
+    width   : 20px
+    margin  : 0
+    padding : 0
+    opacity : 0
+    &+label
+      display      : block
+      margin-left  : 0px
+      margin-top   : 5px
+      padding-left : 25px
+      background   : url('../img/checkbox_disabled.png') no-repeat 0 0
+      line-height  : 17px
+      &.disabled
+        color: #c6ccd2 
+    &:checked + label:not(:last-child)
+      background-image : url('../img/checkbox_enabled.png')
