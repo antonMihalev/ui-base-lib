@@ -48,9 +48,13 @@ table {
 html {
   font-size: 10px; }
 
+body {
+  font-family: 'Josefin Sans', sans-serif; }
+
 .base_container {
   max-width: 940px;
-  margin: 20px auto; }
+  margin: 20px auto;
+  font-family: 'Josefin Sans', sans-serif; }
 
 .row {
   display: flex;
@@ -549,7 +553,7 @@ html {
   .dropdown:hover .dropdown-content {
     display: block; }
   .dropdown-content {
-    display: block;
+    display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 220px;
@@ -626,3 +630,14 @@ html {
         color: #c6ccd2; }
     .checkbox input[type=checkbox]:not(old):checked + label:not(:last-child) {
       background-image: url("../img/checkbox_enabled.png"); }
+
+.range, .range2x {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  min-width: 200px;
+  text-align: center; }
+  .range p, .range2x p {
+    text-align: left; }
+
+#defaultval, #rangedval {
+  padding-bottom: .5rem; }

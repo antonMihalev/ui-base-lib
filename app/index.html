@@ -7,10 +7,25 @@
 <!--<![endif]-->
 <head>
   <meta charset="UTF-8">
-  <title>UI-Base</title>
   <meta name="description" content="" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html">
+  <meta name="author" content="Jake Rocheleau">
+
+  <title>UI-Base</title>
+
+  <!-- slider2x -->
+  <link rel="shortcut icon" href="http://designm.ag/favicon.ico">
+  <link rel="icon" href="http://designm.ag/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Acme">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<!-- slider2x end -->
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -274,7 +289,7 @@
           </div>
         </div>
       </div>
-       <div class="module-group">
+      <div class="module-group">
          <div class="radiobtn">
            <input id="radio-on" type="radio" name="gender" value="Radiobutton Off">
            <label for="radio-on">Radiobutton Off</label>
@@ -295,11 +310,34 @@
 
            <input id="check-disabled" type="checkbox" name="gender3" value="Checkbox Disabled">
            <label for="check-disabled" class="disabled">Checkbox Disabled</label>
-         </div>
-         
-
-         </div>
-       </div>
+        </div>
+      </div>
+      <!-- slider -->
+      <div class="module-group">
+        <div class="range">
+          <div id="defaultval">
+            <p>Slider Value:</p> 
+            <span id="currentval">500</span>
+          </div>
+          
+          <div id="defaultslide"></div>
+        </div>
+        <div class="range2x">
+          <div id="rangedval">
+            <p>Range Value:</p> 
+            <span id="rangeval">90 - 290</span>
+          </div>
+          
+          <div id="rangeslider"></div>
+        </div>
+        <div class="progress">
+          <div class="meter red">
+            <span style="width: 80%"></span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
       
     </div>
     
@@ -308,5 +346,7 @@
 
 
   </div>
+
+  <script src="js/range.js"></script>
 </body>
 </html>
